@@ -2,10 +2,13 @@ language: java
 install: true
 script: ./gradlew release
 jdk: oraclejdk8
+
+before_deploy: export RELFILES=$(ls datamot/build/distributions/)
+
 deploy:
     provider: releases
     api_key: "$GITHUB_TOKEN"
     skip_clean: true
-    file: "sherzodv/travis-test/datamot/build/distributions/datamot*"
+    file: "$RELFILES"
     on:
         tags: true
