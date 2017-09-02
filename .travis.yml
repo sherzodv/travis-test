@@ -8,7 +8,8 @@ before_deploy: export RELFILES=$(ls datamot/build/distributions/datamot-*.tar)
 deploy:
     provider: releases
     api_key: "$GITHUB_TOKEN"
-    skip_clean: true
+    skip_cleanup: true
     file: "$RELFILES"
+    prerelease: true
     on:
         tags: true
