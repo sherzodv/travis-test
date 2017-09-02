@@ -3,7 +3,7 @@ install: true
 script: ./gradlew release
 jdk: oraclejdk8
 
-before_deploy: export RELFILES=$(ls datamot/build/distributions/)
+before_deploy: export RELFILES=$(ls datamot/build/distributions/datamot-*.tar)
 
 deploy:
     provider: releases
