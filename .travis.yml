@@ -6,6 +6,6 @@ deploy:
     provider: releases
     api_key: "$GITHUB_TOKEN"
     skip_clean: true
-    file: "travis-test/datamot/build/distributions/datamot*"
+    file: "sherzodv/travis-test/datamot/build/distributions/datamot*"
     on:
         tags: true
